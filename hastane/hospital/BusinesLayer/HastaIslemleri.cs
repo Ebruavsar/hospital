@@ -15,6 +15,7 @@ namespace BusinessLayer
 
         private DataAccessLayer.Connection baglanti = new DataAccessLayer.Connection();
 
+
         public void ekle(string kimlik, string ad, string soyad, string tel, DateTime tarih,string cinsiyet, string mail)
         {
             OleDbConnection connection = baglanti.ConnectionOpen();

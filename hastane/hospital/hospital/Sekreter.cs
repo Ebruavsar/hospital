@@ -22,6 +22,7 @@ namespace hospital
         public string Giristen_Alinan_Sekreter_kimlik = "";
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
+
         public Sekreter()
         {
             InitializeComponent();
