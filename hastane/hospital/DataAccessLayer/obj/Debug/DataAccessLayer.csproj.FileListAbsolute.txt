@@ -10,3 +10,9 @@ C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\DataAccessLayer\obj\Debug\Da
 C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
 C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
