@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
@@ -114,6 +115,8 @@
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -697,7 +700,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(180, 26);
             this.dateTimePicker1.TabIndex = 44;
-            this.dateTimePicker1.Value = new System.DateTime(2024, 3, 9, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // label26
             // 
@@ -910,6 +913,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage4.Controls.Add(this.checkedListBox1);
             this.tabPage4.Controls.Add(this.comboBox7);
             this.tabPage4.Controls.Add(this.r_listele);
             this.tabPage4.Controls.Add(this.label31);
@@ -938,55 +942,21 @@
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Items.AddRange(new object[] {
             "09:00",
-            "09:10",
-            "09:20",
-            "09:30",
-            "09:40",
-            "09:50",
             "10:00",
-            "10:10",
-            "10:20",
-            "10:30",
-            "10:40",
-            "10:50",
             "11:00",
-            "11:10",
-            "11:20",
-            "11:30",
-            "11:40",
-            "11:50",
             "13:00",
-            "13:10",
-            "13:20",
-            "13:30",
-            "13:40",
-            "13:50",
             "14:00",
-            "14:10",
-            "14:20",
-            "14:30",
-            "14:40",
-            "14:50",
             "15:00",
-            "15:10",
-            "15:20",
-            "15:30",
-            "15:40",
-            "15:50",
-            "16:00",
-            "16:10",
-            "16:20",
-            "16:30",
-            "16:40",
-            "16:50"});
-            this.comboBox7.Location = new System.Drawing.Point(141, 246);
+            "16:00"});
+            this.comboBox7.Location = new System.Drawing.Point(141, 195);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(142, 27);
             this.comboBox7.TabIndex = 49;
+            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
             // 
             // r_listele
             // 
-            this.r_listele.Location = new System.Drawing.Point(195, 206);
+            this.r_listele.Location = new System.Drawing.Point(195, 228);
             this.r_listele.Name = "r_listele";
             this.r_listele.Size = new System.Drawing.Size(88, 27);
             this.r_listele.TabIndex = 48;
@@ -997,7 +967,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(14, 249);
+            this.label31.Location = new System.Drawing.Point(14, 198);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(112, 19);
             this.label31.TabIndex = 46;
@@ -1007,7 +977,7 @@
             // 
             this.dateTimePicker2.CustomFormat = "dd.MM.yyyy";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(141, 174);
+            this.dateTimePicker2.Location = new System.Drawing.Point(141, 163);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(142, 26);
             this.dateTimePicker2.TabIndex = 45;
@@ -1015,7 +985,7 @@
             // 
             // olustur
             // 
-            this.olustur.Location = new System.Drawing.Point(195, 280);
+            this.olustur.Location = new System.Drawing.Point(195, 399);
             this.olustur.Name = "olustur";
             this.olustur.Size = new System.Drawing.Size(88, 28);
             this.olustur.TabIndex = 27;
@@ -1025,7 +995,7 @@
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(141, 142);
+            this.textBox18.Location = new System.Drawing.Point(141, 131);
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(142, 26);
             this.textBox18.TabIndex = 25;
@@ -1033,7 +1003,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(17, 180);
+            this.label29.Location = new System.Drawing.Point(17, 169);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(117, 19);
             this.label29.TabIndex = 24;
@@ -1042,7 +1012,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(23, 145);
+            this.label30.Location = new System.Drawing.Point(23, 134);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(111, 19);
             this.label30.TabIndex = 23;
@@ -1141,6 +1111,14 @@
             this.label20.Size = new System.Drawing.Size(103, 19);
             this.label20.TabIndex = 0;
             this.label20.Text = "Hasta Kimlik:";
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(141, 261);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(142, 130);
+            this.checkedListBox1.TabIndex = 50;
             // 
             // Sekreter
             // 
@@ -1259,6 +1237,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button r_listele;
         private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

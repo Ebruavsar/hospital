@@ -14,6 +14,7 @@ namespace BusinessLayer
     {
         private DataAccessLayer.Connection baglanti = new DataAccessLayer.Connection();
 
+        //------------------hasta görüntüleme-------------
         public string HastaGoruntuleAd(string kimlik)
         {
             string ad = "";
@@ -59,7 +60,7 @@ namespace BusinessLayer
             return result;
         }
 
-
+        //-----------seçilen polikinliğe göre doktorları listeleme-------------
         public DataTable poliklinikDoktorGoruntule(string brans)
         {
 
@@ -82,7 +83,7 @@ namespace BusinessLayer
             return dt;
         }
 
-        /*----------------------------------------------------------------------------------------------*/
+        /*------------------------------randevunun aktifliğinin kontrolü----------------------------------------------------------------*/
         public bool RandevuPlanla(string doktorKimlik, string hastaKimlik, DateTime randevuTarihi, string randevuSaati)
         {
             OleDbConnection connection = baglanti.ConnectionOpen();
@@ -134,19 +135,29 @@ namespace BusinessLayer
             }
         }
 
-
-        public DataTable DoktorRandevuGoruntule(string Dkimlik, DateTime randevuTarihi)
+        //----------------seçilen doktorun randevularını listeleme---------------
+        public DataTable DoktorRandevuGoruntule(string Dkimlik, DateTime randevuTarihi, string randevuSaati)
         {
             DataTable dt = new DataTable();
             using (OleDbConnection connection = baglanti.ConnectionOpen())
             {
                 try
                 {
-                    string date = randevuTarihi.ToString("dd.MM.yyyy");
-                    string query = "SELECT DoktorKimlik, HastaKimlik, RandevuTarihi, FORMAT(RandevuSaati, 'Short Time') AS RandevuSaati FROM Randevu WHERE DoktorKimlik = @DoktorKimlik AND RandevuTarihi = @RandevuTarihi";
+                    // Randevu tarihi ve saatini kullanarak başlangıç ve bitiş zamanlarını belirleyin
+                    DateTime baslangicZamani = randevuTarihi.Date + TimeSpan.Parse(randevuSaati); // Seçilen randevu saati
+                    DateTime bitisZamani = baslangicZamani.AddHours(1); // Seçilen randevu saati ile bir sonraki saat
+
+                    string baslangicDate = baslangicZamani.ToString("dd.MM.yyyy");
+                    string baslangicSaati = baslangicZamani.ToString("HH:mm:ss");
+                    string bitisDate = bitisZamani.ToString("dd.MM.yyyy");
+                    string bitisSaati = bitisZamani.ToString("HH:mm:ss");
+
+                    string query = "SELECT DoktorKimlik, HastaKimlik, RandevuTarihi, FORMAT(RandevuSaati, 'Short Time') AS RandevuSaati FROM Randevu WHERE DoktorKimlik = @DoktorKimlik AND RandevuTarihi = @RandevuTarihi AND RandevuSaati >= @BaslangicSaati AND RandevuSaati < @BitisSaati ORDER BY RandevuSaati ASC";
                     OleDbCommand komut = new OleDbCommand(query, connection);
                     komut.Parameters.AddWithValue("@DoktorKimlik", Dkimlik);
-                    komut.Parameters.AddWithValue("@RandevuTarihi", date);
+                    komut.Parameters.AddWithValue("@RandevuTarihi", baslangicDate);
+                    komut.Parameters.AddWithValue("@BaslangicSaati", baslangicSaati);
+                    komut.Parameters.AddWithValue("@BitisSaati", bitisSaati);
 
                     using (OleDbDataAdapter da = new OleDbDataAdapter(komut))
                     {

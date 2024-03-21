@@ -18,7 +18,7 @@ namespace hospital
         public BusinessLayer.DoktorIslemleri DoktorIslemleri = new DoktorIslemleri();
         public BusinessLayer.SekreterIslemleri SekreterIslemleri = new SekreterIslemleri();
         public BusinessLayer.HastaIslemleri HastaIslemleri = new HastaIslemleri();
-        public BusinessLayer.RandevuIslemleri RandevuIslemleri=new RandevuIslemleri();
+        public BusinessLayer.RandevuIslemleri RandevuIslemleri = new RandevuIslemleri();
         public string Giristen_Alinan_Sekreter_kimlik = "";
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
@@ -28,7 +28,7 @@ namespace hospital
             InitializeComponent();
         }
 
-      
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -50,6 +50,18 @@ namespace hospital
             dataGridView4.DataSource = tabl;
 
 
+            //tooltip için 
+            toolTip1.SetToolTip(textBox1, "TC kimlik numarası 11 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox4, "Telefon numarası 10 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox8, "TC kimlik numarası 11 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox11, "Telefon numarası 10 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox14, "TC kimlik numarası 11 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox17, "Telefon numarası 10 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox19, "Email x@y.com formatında olmalıdır. ");
+
+            // DateTimePicker kontrolünün varsayılan değerini sistem tarihiyle ayarla
+            dateTimePicker2.Value = DateTime.Now;
+
             /*----------------------------------------------------------------------------*/
         }
 
@@ -61,7 +73,7 @@ namespace hospital
             textBox3.Clear();
             comboBox1.ResetText();
             textBox4.Clear();
-            //textBox5.Clear();
+
             textBox6.Clear();
             textBox7.Clear();
             comboBox2.ResetText();
@@ -78,7 +90,7 @@ namespace hospital
 
                 // Telefon numarasının geçerliliğini kontrol et
                 string formattedPhoneNumber = FormatPhoneNumber(textBox4.Text);
-               
+
 
                 DoktorIslemleri.ekle(textBox1.Text, textBox2.Text, textBox3.Text, comboBox1.Text, formattedPhoneNumber, textBox5.Text, textBox6.Text);
                 MessageBox.Show("Başarıyla Eklendi");
@@ -89,14 +101,14 @@ namespace hospital
             {
                 MessageBox.Show(hata.Message);
             }
-            
+
         }
 
         private void listele_Click(object sender, EventArgs e)
         {
-            DataTable tablo = DoktorIslemleri.goruntule(comboBox2.Text,textBox7.Text);
+            DataTable tablo = DoktorIslemleri.goruntule(comboBox2.Text, textBox7.Text);
             dataGridView1.DataSource = tablo;
-            
+
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -280,7 +292,7 @@ namespace hospital
                     throw new Exception("Geçersiz e-posta adresi");
                 }
 
-                HastaIslemleri.ekle(textBox14.Text, textBox15.Text, textBox16.Text, formattedPhoneNumber,  dateTimePicker1.Value, comboBox6.Text, textBox19.Text);
+                HastaIslemleri.ekle(textBox14.Text, textBox15.Text, textBox16.Text, formattedPhoneNumber, dateTimePicker1.Value, comboBox6.Text, textBox19.Text);
                 MessageBox.Show("Başarıyla Eklendi");
                 h_listele_Click(sender, e);
             }
@@ -332,7 +344,7 @@ namespace hospital
 
         private void olustur_Click(object sender, EventArgs e)
         {
-            bool kayıt = RandevuIslemleri.RandevuPlanla(textBox18.Text, textBox21.Text, dateTimePicker2.Value, comboBox7.Text);
+            bool kayıt = RandevuIslemleri.RandevuPlanla(textBox18.Text, textBox21.Text, dateTimePicker2.Value, checkedListBox1.SelectedItem.ToString());
             if (kayıt)
             {
                 MessageBox.Show("Randevu başarıyla oluşturuldu.");
@@ -364,8 +376,21 @@ namespace hospital
 
         private void r_listele_Click(object sender, EventArgs e)
         {
-            DataTable tabl = RandevuIslemleri.DoktorRandevuGoruntule(textBox18.Text, dateTimePicker2.Value);
+            DataTable tabl = RandevuIslemleri.DoktorRandevuGoruntule(textBox18.Text, dateTimePicker2.Value, comboBox7.Text);
             dataGridView5.DataSource = tabl;
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            checkedListBox1.Enabled = true;
+            checkedListBox1.Items.Clear();
+            string selectedText = comboBox7.Text;
+            string editedText = selectedText.Substring(0, selectedText.Length - 2);
+            //editedText.
+            for (int i = 0; i < 6; i++)
+            {
+                checkedListBox1.Items.Add(editedText + i + "0");
+            }
         }
 
         //hata mesajları için------------------------------------------------------------------------------------------------------------
@@ -428,5 +453,7 @@ namespace hospital
                 return false; // Herhangi bir hata durumunda false döndürün
             }
         }
+
+     
     }
 }
