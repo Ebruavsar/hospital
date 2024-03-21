@@ -26,6 +26,7 @@ namespace hospital
         public Sekreter()
         {
             InitializeComponent();
+
         }
 
 
@@ -57,6 +58,7 @@ namespace hospital
             toolTip1.SetToolTip(textBox11, "Telefon numarası 10 haneli olmalıdır.");
             toolTip1.SetToolTip(textBox14, "TC kimlik numarası 11 haneli olmalıdır.");
             toolTip1.SetToolTip(textBox17, "Telefon numarası 10 haneli olmalıdır.");
+            toolTip1.SetToolTip(textBox19, "Email x@y.com formatında olmalıdır.");
             toolTip1.SetToolTip(textBox19, "Email x@y.com formatında olmalıdır. ");
 
             // DateTimePicker kontrolünün varsayılan değerini sistem tarihiyle ayarla
