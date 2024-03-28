@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.mail = new System.Windows.Forms.Button();
+            this.pdf = new System.Windows.Forms.Button();
             this.ekle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -53,11 +55,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pdf = new System.Windows.Forms.Button();
-            this.mail = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listele = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -104,6 +112,25 @@
             this.tabPage1.Size = new System.Drawing.Size(1118, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Randevu";
+            // 
+            // mail
+            // 
+            this.mail.Location = new System.Drawing.Point(645, 414);
+            this.mail.Name = "mail";
+            this.mail.Size = new System.Drawing.Size(99, 27);
+            this.mail.TabIndex = 50;
+            this.mail.Text = "E-Posta";
+            this.mail.UseVisualStyleBackColor = true;
+            // 
+            // pdf
+            // 
+            this.pdf.Location = new System.Drawing.Point(645, 381);
+            this.pdf.Name = "pdf";
+            this.pdf.Size = new System.Drawing.Size(99, 27);
+            this.pdf.TabIndex = 49;
+            this.pdf.Text = "PDF";
+            this.pdf.UseVisualStyleBackColor = true;
+            this.pdf.Click += new System.EventHandler(this.pdf_Click);
             // 
             // ekle
             // 
@@ -315,6 +342,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.listele);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -322,24 +355,67 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Randevu Geçmişi";
             // 
-            // pdf
+            // comboBox1
             // 
-            this.pdf.Location = new System.Drawing.Point(645, 381);
-            this.pdf.Name = "pdf";
-            this.pdf.Size = new System.Drawing.Size(99, 27);
-            this.pdf.TabIndex = 49;
-            this.pdf.Text = "PDF";
-            this.pdf.UseVisualStyleBackColor = true;
-            this.pdf.Click += new System.EventHandler(this.pdf_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Hasta Kimlik",
+            "Randevu Tarih"});
+            this.comboBox1.Location = new System.Drawing.Point(62, 246);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(155, 27);
+            this.comboBox1.TabIndex = 54;
             // 
-            // mail
+            // listele
             // 
-            this.mail.Location = new System.Drawing.Point(645, 414);
-            this.mail.Name = "mail";
-            this.mail.Size = new System.Drawing.Size(99, 27);
-            this.mail.TabIndex = 50;
-            this.mail.Text = "E-Posta";
-            this.mail.UseVisualStyleBackColor = true;
+            this.listele.Location = new System.Drawing.Point(503, 246);
+            this.listele.Name = "listele";
+            this.listele.Size = new System.Drawing.Size(86, 26);
+            this.listele.TabIndex = 53;
+            this.listele.Text = "Listele";
+            this.listele.UseVisualStyleBackColor = true;
+            this.listele.Click += new System.EventHandler(this.listele_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(255, 249);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 19);
+            this.label18.TabIndex = 52;
+            this.label18.Text = "Arama:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 249);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(50, 19);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Filtre:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(320, 246);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(155, 26);
+            this.textBox1.TabIndex = 50;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 19);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1104, 220);
+            this.dataGridView2.TabIndex = 48;
             // 
             // Doktor
             // 
@@ -354,6 +430,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,5 +466,11 @@
         private System.Windows.Forms.Button ekle;
         private System.Windows.Forms.Button mail;
         private System.Windows.Forms.Button pdf;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button listele;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

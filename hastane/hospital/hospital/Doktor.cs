@@ -33,6 +33,8 @@ namespace hospital
             DataTable dt = doktorRandevu.goruntule(dateTimePicker1.Value,label13.Text);
             dataGridView1.DataSource = dt;
             dateTimePicker1.Value = DateTime.Now;
+            DataTable tablo = doktorRandevu.eski_gorusmeler(comboBox1.Text, textBox1.Text);
+            dataGridView2.DataSource = tablo;
         }
 
         private void goruntule_Click(object sender, EventArgs e)
@@ -127,5 +129,13 @@ namespace hospital
             }
 
         }
+
+        private void listele_Click(object sender, EventArgs e)
+        {
+            DataTable tablo = doktorRandevu.eski_gorusmeler(comboBox1.Text, textBox1.Text);
+            dataGridView2.DataSource = tablo;
+        }
+
+
     }
 }

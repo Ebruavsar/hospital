@@ -23,9 +23,9 @@ namespace BusinessLayer
                 try
                 {
 
-                    string query = "SELECT Randevu.HastaKimlik, Randevu.DoktorKimlik, Randevu.RandevuTarihi, Randevu.RandevuSaati, Hasta.HastaAd, Hasta.HastaSoyad, Hasta.HastaDogumTarihi, Hasta.HastaMail FROM Randevu INNER JOIN Hasta ON Randevu.HastaKimlik = Hasta.HastaKimlik WHERE (Randevu.RandevuTarihi=@RandevuTarihi AND Randevu.DoktorKimlik=@DoktorKimlik)";
+                    string query = "SELECT Randevu.HastaKimlik, Randevu.DoktorKimlik, Format(Randevu.RandevuTarihi, 'dd/mm/yyyy') AS RandevuTarihi, Format(Randevu.RandevuSaati, 'hh:nn:ss') AS RandevuSaati,  Hasta.HastaAd, Hasta.HastaSoyad, Format(Hasta.HastaDogumTarihi, 'dd/mm/yyyy') AS HastaDogumTarihi, Hasta.HastaMail FROM Randevu INNER JOIN Hasta ON Randevu.HastaKimlik = Hasta.HastaKimlik WHERE (Randevu.RandevuTarihi=@RandevuTarihi AND Randevu.DoktorKimlik=@DoktorKimlik)";
                     OleDbCommand komut = new OleDbCommand(query, connection);
-                    komut.Parameters.AddWithValue("@RandevuTarihi", tarih);
+                    komut.Parameters.AddWithValue("@RandevuTarihi", tarih.ToString("dd/MM/yyyy")); // Tarih formatını uygun şekilde belirtin
                     komut.Parameters.AddWithValue("@DoktorKimlik", dkimlik);
 
                     using (OleDbDataAdapter da = new OleDbDataAdapter(komut))
@@ -59,6 +59,35 @@ namespace BusinessLayer
             }
 
             connection.Close();
+        }
+        public DataTable eski_gorusmeler(string filter, string text)
+        {
+
+            DataTable dt = new DataTable();
+            OleDbConnection connection = baglanti.ConnectionOpen();
+            string query;
+
+            try
+            {
+                if (filter == "Hasta Kimlik")
+                    query = "SELECT HastaKimlik, Gorusler, Tahlil FROM Gorusme WHERE HastaKimlik LIKE '" + text + "%'";
+                else if (filter == "Randevu Tarih")
+                {
+                    query = "SELECT Gorusme.HastaKimlik, Gorusme.Gorusler, Gorusme.Tahlil, Randevu.RandevuTarihi FROM Gorusme INNER JOIN Randevu ON Gorusme.HastaKimlik = Randevu.HastaKimlik WHERE Randevu.RandevuTarihi LIKE '" + text + "%'";
+                }
+                else
+                    query = "SELECT HastaKimlik, Gorusler, Tahlil FROM Gorusme";
+
+                OleDbCommand komut = new OleDbCommand(query, connection);
+                OleDbDataAdapter da = new OleDbDataAdapter(komut);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda yapılacak işlemler
+                Console.WriteLine("Hata: " + ex.Message);
+            }
+            return dt;
         }
     }
 }
