@@ -30,6 +30,7 @@ namespace hospital
                 Doktor doktor = new Doktor();
                 {
                     doktor.StartPosition = FormStartPosition.CenterParent;
+                    doktor.Giristen_Alinan_Doktor_Kimlik = kimlik;
                     doktor.Show();
                 }
             }

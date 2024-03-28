@@ -30,6 +30,7 @@ namespace BusinessLayer
             return hastalikBolumleriHastaSayilari;
         }
 
+
         // Veritabanından doktorlara ait hasta sayılarını alacak metot
         public Dictionary<string, int> GetDoctorPatientCounts()
         {
@@ -52,5 +53,6 @@ namespace BusinessLayer
             return doctorPatientCounts;
 
         }
+
     }
 }

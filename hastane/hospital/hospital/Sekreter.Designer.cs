@@ -117,12 +117,12 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.güncelle = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -1133,7 +1133,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.tabPage5.Controls.Add(this.güncelle);
+            this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.zedGraphControl1);
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
@@ -1142,15 +1142,15 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Bölüme göre hasta sayısı";
             // 
-            // güncelle
+            // button1
             // 
-            this.güncelle.Location = new System.Drawing.Point(1177, 380);
-            this.güncelle.Name = "güncelle";
-            this.güncelle.Size = new System.Drawing.Size(92, 29);
-            this.güncelle.TabIndex = 1;
-            this.güncelle.Text = "Güncelle";
-            this.güncelle.UseVisualStyleBackColor = true;
-            this.güncelle.Click += new System.EventHandler(this.güncelle_Click);
+            this.button1.Location = new System.Drawing.Point(1177, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 29);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Güncelle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // zedGraphControl1
             // 
@@ -1171,8 +1171,9 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.tabPage6.Controls.Add(this.button1);
+            this.tabPage6.Controls.Add(this.button2);
             this.tabPage6.Controls.Add(this.zedGraphControl2);
+            this.tabPage6.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.tabPage6.Location = new System.Drawing.Point(4, 28);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
@@ -1182,7 +1183,7 @@
             // 
             // zedGraphControl2
             // 
-            this.zedGraphControl2.Location = new System.Drawing.Point(30, 25);
+            this.zedGraphControl2.Location = new System.Drawing.Point(21, 19);
             this.zedGraphControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.zedGraphControl2.Name = "zedGraphControl2";
             this.zedGraphControl2.ScrollGrace = 0D;
@@ -1192,19 +1193,19 @@
             this.zedGraphControl2.ScrollMinX = 0D;
             this.zedGraphControl2.ScrollMinY = 0D;
             this.zedGraphControl2.ScrollMinY2 = 0D;
-            this.zedGraphControl2.Size = new System.Drawing.Size(1254, 348);
+            this.zedGraphControl2.Size = new System.Drawing.Size(1270, 357);
             this.zedGraphControl2.TabIndex = 0;
             this.zedGraphControl2.UseExtendedPrintDialog = true;
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(1161, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(92, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Güncelle";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(1199, 383);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 29);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Güncelle";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Sekreter
             // 
@@ -1329,9 +1330,9 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TabPage tabPage5;
         private ZedGraph.ZedGraphControl zedGraphControl1;
-        private System.Windows.Forms.Button güncelle;
-        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button button2;
         private ZedGraph.ZedGraphControl zedGraphControl2;
     }
 }

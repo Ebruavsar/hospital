@@ -5,7 +5,6 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -69,17 +68,15 @@ namespace hospital
 
             /*----------------------------------------------------------------------------*/
 
-            //------zedgraph
+            
             Dictionary<string, int> hastalikBolumleriHastaSayilari = ZedGraph.GetHastalikBolumleriHastaSayilari();
             DrawBarGraph(hastalikBolumleriHastaSayilari);
 
-            
             Dictionary<string, int> doctorPatientCounts = ZedGraph.GetDoctorPatientCounts();
             doktorhasta(doctorPatientCounts);
-
         }
 
-
+        
         //doktor ekle,sil,güncelle-----------------------------------------------------------------------------------------------------
         public void temizle()
         {
@@ -509,18 +506,7 @@ namespace hospital
 
 
         }
-        private void güncelle_Click(object sender, EventArgs e)
-        {
-            //temizle
-            zedGraphControl1.GraphPane.CurveList.Clear();
-            zedGraphControl1.GraphPane.GraphObjList.Clear();
-            zedGraphControl1.AxisChange();
-            zedGraphControl1.Invalidate();
-
-            //yeniden oluştur
-            Dictionary<string, int> hastalikBolumleriHastaSayilari2 = ZedGraph.GetHastalikBolumleriHastaSayilari();
-            DrawBarGraph(hastalikBolumleriHastaSayilari2);
-        }
+       
 
         private void doktorhasta(Dictionary<string, int> data)
         {
@@ -562,9 +548,9 @@ namespace hospital
 
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void button2_Click(object sender, EventArgs e)
+        {
             //temizle
             zedGraphControl2.GraphPane.CurveList.Clear();
             zedGraphControl2.GraphPane.GraphObjList.Clear();
@@ -574,6 +560,19 @@ namespace hospital
             //yeniden oluştur
             Dictionary<string, int> doctorPatientCounts = ZedGraph.GetDoctorPatientCounts();
             doktorhasta(doctorPatientCounts);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //temizle
+            zedGraphControl1.GraphPane.CurveList.Clear();
+            zedGraphControl1.GraphPane.GraphObjList.Clear();
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
+            //yeniden oluştur
+            Dictionary<string, int> hastalikBolumleriHastaSayilari2 = ZedGraph.GetHastalikBolumleriHastaSayilari();
+            DrawBarGraph(hastalikBolumleriHastaSayilari2);
         }
     }
 }
