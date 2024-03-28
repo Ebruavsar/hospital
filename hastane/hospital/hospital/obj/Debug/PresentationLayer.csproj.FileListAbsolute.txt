@@ -111,3 +111,6 @@ C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\o
 C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\obj\Debug\PresentationLayer.csproj.CopyComplete
 C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\obj\Debug\hospital.exe
 C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\obj\Debug\hospital.pdb
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\bin\Debug\itextsharp.dll
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\bin\Debug\itextsharp.xml

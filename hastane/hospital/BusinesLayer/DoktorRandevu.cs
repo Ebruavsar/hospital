@@ -41,5 +41,24 @@ namespace BusinessLayer
             }
             return dt;
         }
+        public void ekle(string dkimlik, string hkimlik, string gorus, string tahlil)
+        {
+            OleDbConnection connection = baglanti.ConnectionOpen();
+            try
+            {
+                OleDbCommand komut = new OleDbCommand("INSERT INTO Gorusme (DoktorKimlik, HastaKimlik, Gorusler, Tahlil) VALUES (@DoktorKimlik, @HastaKimlik, @Gorusler,@Tahlil)", connection);
+                komut.Parameters.AddWithValue("@DoktorKimlik", dkimlik);
+                komut.Parameters.AddWithValue("@HastaKimlik", hkimlik);
+                komut.Parameters.AddWithValue("@Gorusler", gorus);
+                komut.Parameters.AddWithValue("@Tahlil", tahlil);
+                komut.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.Error.WriteLine("Eklenemedi");
+            }
+
+            connection.Close();
+        }
     }
 }
