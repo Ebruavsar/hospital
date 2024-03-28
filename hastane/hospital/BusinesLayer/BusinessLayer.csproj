@@ -47,6 +47,7 @@
     <Compile Include="Giris.cs" />
     <Compile Include="RandevuIslemleri.cs" />
     <Compile Include="SekreterIslemleri.cs" />
+    <Compile Include="ZedGraph.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">

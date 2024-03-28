@@ -10,3 +10,9 @@ C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\EntityLayer\obj\Debug\Entity
 C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
 C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.dll
 C:\Users\beyza\OneDrive\Masaüstü\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Debug\EntityLayer.pdb

@@ -99,6 +99,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.r_listele = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
@@ -115,8 +116,9 @@
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -127,6 +129,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -135,7 +138,8 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Location = new System.Drawing.Point(4, 18);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(-2, 13);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -937,6 +941,14 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Randevu İşlemleri";
             // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(141, 261);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(142, 130);
+            this.checkedListBox1.TabIndex = 50;
+            // 
             // comboBox7
             // 
             this.comboBox7.FormattingEnabled = true;
@@ -1112,13 +1124,32 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Hasta Kimlik:";
             // 
-            // checkedListBox1
+            // tabPage5
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(141, 261);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(142, 130);
-            this.checkedListBox1.TabIndex = 50;
+            this.tabPage5.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage5.Controls.Add(this.zedGraphControl1);
+            this.tabPage5.Location = new System.Drawing.Point(4, 28);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1314, 430);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Bölüme göre hasta sayısı";
+            // 
+            // zedGraphControl1
+            // 
+            this.zedGraphControl1.Location = new System.Drawing.Point(55, 20);
+            this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.zedGraphControl1.Name = "zedGraphControl1";
+            this.zedGraphControl1.ScrollGrace = 0D;
+            this.zedGraphControl1.ScrollMaxX = 0D;
+            this.zedGraphControl1.ScrollMaxY = 0D;
+            this.zedGraphControl1.ScrollMaxY2 = 0D;
+            this.zedGraphControl1.ScrollMinX = 0D;
+            this.zedGraphControl1.ScrollMinY = 0D;
+            this.zedGraphControl1.ScrollMinY2 = 0D;
+            this.zedGraphControl1.Size = new System.Drawing.Size(1229, 383);
+            this.zedGraphControl1.TabIndex = 0;
+            this.zedGraphControl1.UseExtendedPrintDialog = true;
             // 
             // Sekreter
             // 
@@ -1145,6 +1176,7 @@
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1239,6 +1271,8 @@
         private System.Windows.Forms.ComboBox comboBox7;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.TabPage tabPage5;
+        private ZedGraph.ZedGraphControl zedGraphControl1;
     }
 }
 

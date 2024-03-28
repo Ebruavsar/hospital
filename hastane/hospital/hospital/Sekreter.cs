@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BusinessLayer;
+using ZedGraph;
 
 namespace hospital
 {
@@ -19,6 +20,7 @@ namespace hospital
         public BusinessLayer.SekreterIslemleri SekreterIslemleri = new SekreterIslemleri();
         public BusinessLayer.HastaIslemleri HastaIslemleri = new HastaIslemleri();
         public BusinessLayer.RandevuIslemleri RandevuIslemleri = new RandevuIslemleri();
+        public BusinessLayer.ZedGraph ZedGraph = new BusinessLayer.ZedGraph();
         public string Giristen_Alinan_Sekreter_kimlik = "";
         System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
@@ -59,13 +61,58 @@ namespace hospital
             toolTip1.SetToolTip(textBox14, "TC kimlik numarası 11 haneli olmalıdır.");
             toolTip1.SetToolTip(textBox17, "Telefon numarası 10 haneli olmalıdır.");
             toolTip1.SetToolTip(textBox19, "Email x@y.com formatında olmalıdır.");
-            toolTip1.SetToolTip(textBox19, "Email x@y.com formatında olmalıdır. ");
+
 
             // DateTimePicker kontrolünün varsayılan değerini sistem tarihiyle ayarla
             dateTimePicker2.Value = DateTime.Now;
 
             /*----------------------------------------------------------------------------*/
+
+            
+            Dictionary<string, int> hastalikBolumleriHastaSayilari = ZedGraph.GetHastalikBolumleriHastaSayilari();
+            DrawBarGraph(hastalikBolumleriHastaSayilari);
+
         }
+
+        private void DrawBarGraph(Dictionary<string, int> data)
+        {
+            GraphPane graphPane = zedGraphControl1.GraphPane;
+            graphPane.Title.Text = "Hastalık Bölümlerine Göre Hasta Sayısı";
+            graphPane.XAxis.Title.Text = "Hastalık Bölümü";
+            graphPane.YAxis.Title.Text = "Hasta Sayısı";
+
+            // Veri serisi oluştur
+            string[] labels = data.Keys.ToArray();
+            double[] values = data.Values.Select(x => (double)x).ToArray();
+
+
+            // Sütunların konumunu ve genişliğini belirleyin
+            double[] positions = new double[data.Count];
+            for (int i = 0; i < data.Count; i++)
+            {
+                positions[i] = i + 1; // Sütunun x konumu
+            }
+
+            // Sütunları oluşturun
+            BarItem bar = graphPane.AddBar("Hasta Sayısı", positions, values, Color.DarkSeaGreen);
+
+            BarItem.CreateBarLabels(graphPane, false, "F0");
+
+            // Sütunların genişliğini ayarlayın
+            graphPane.BarSettings.ClusterScaleWidth = 1.0;
+
+            // X ekseninde etiketleri ayarlayın
+            graphPane.XAxis.Scale.TextLabels = labels;
+            graphPane.XAxis.Type = AxisType.Text;
+
+            // Eksenleri yeniden çiz
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
+  
+        }
+
+
 
         //doktor ekle,sil,güncelle-----------------------------------------------------------------------------------------------------
         public void temizle()
@@ -346,7 +393,7 @@ namespace hospital
 
         private void olustur_Click(object sender, EventArgs e)
         {
-            bool kayıt = RandevuIslemleri.RandevuPlanla(textBox18.Text, textBox21.Text, dateTimePicker2.Value, checkedListBox1.SelectedItem.ToString());
+            bool kayıt = RandevuIslemleri.RandevuPlanla(textBox18.Text, textBox21.Text, dateTimePicker2.Value, checkedListBox1.SelectedItem.ToString(),comboBox5.Text);
             if (kayıt)
             {
                 MessageBox.Show("Randevu başarıyla oluşturuldu.");

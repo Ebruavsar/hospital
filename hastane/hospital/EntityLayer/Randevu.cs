@@ -13,6 +13,7 @@ namespace EntityLayer
         public string DoktorKimlik { get; set; }
         public DateTime RandevuTarihi { get; set; }
         public DateTime RandevuSaati { get; set; }
+        public string BransAd { get; set; }
 
     }
 }

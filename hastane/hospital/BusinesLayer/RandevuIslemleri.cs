@@ -84,7 +84,7 @@ namespace BusinessLayer
         }
 
         /*------------------------------randevunun aktifliğinin kontrolü----------------------------------------------------------------*/
-        public bool RandevuPlanla(string doktorKimlik, string hastaKimlik, DateTime randevuTarihi, string randevuSaati)
+        public bool RandevuPlanla(string doktorKimlik, string hastaKimlik, DateTime randevuTarihi, string randevuSaati, string BransAd)
         {
             OleDbConnection connection = baglanti.ConnectionOpen();
             try
@@ -106,11 +106,12 @@ namespace BusinessLayer
                 if (mevcutRandevuSayisi == 0)
                 {
                     // Eğer uygunsa, randevuyu planlamaya devam edin
-                    OleDbCommand ekleKomutu = new OleDbCommand("INSERT INTO Randevu (DoktorKimlik, HastaKimlik, RandevuTarihi, RandevuSaati) VALUES (@DoktorKimlik, @HastaKimlik, @RandevuTarihi, @RandevuSaati)", connection);
+                    OleDbCommand ekleKomutu = new OleDbCommand("INSERT INTO Randevu (DoktorKimlik, HastaKimlik, RandevuTarihi, RandevuSaati,BransAd) VALUES (@DoktorKimlik, @HastaKimlik, @RandevuTarihi, @RandevuSaati,@BransAd)", connection);
                     ekleKomutu.Parameters.AddWithValue("@DoktorKimlik", doktorKimlik);
                     ekleKomutu.Parameters.AddWithValue("@HastaKimlik", hastaKimlik);
                     ekleKomutu.Parameters.AddWithValue("@RandevuTarihi", randevuTarihi.Date);
                     ekleKomutu.Parameters.AddWithValue("@RandevuSaati", randevuSaati);
+                    ekleKomutu.Parameters.AddWithValue("@BransAd", BransAd);
 
                     ekleKomutu.ExecuteNonQuery();
 
