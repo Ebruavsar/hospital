@@ -73,6 +73,10 @@ namespace hospital
             Dictionary<string, int> hastalikBolumleriHastaSayilari = ZedGraph.GetHastalikBolumleriHastaSayilari();
             DrawBarGraph(hastalikBolumleriHastaSayilari);
 
+            
+            Dictionary<string, int> doctorPatientCounts = ZedGraph.GetDoctorPatientCounts();
+            doktorhasta(doctorPatientCounts);
+
         }
 
 
@@ -516,6 +520,59 @@ namespace hospital
             //yeniden oluştur
             Dictionary<string, int> hastalikBolumleriHastaSayilari2 = ZedGraph.GetHastalikBolumleriHastaSayilari();
             DrawBarGraph(hastalikBolumleriHastaSayilari2);
+        }
+
+        private void doktorhasta(Dictionary<string, int> data)
+        {
+            GraphPane graphPane = zedGraphControl2.GraphPane;
+            if (graphPane != null)
+            {
+                graphPane.Title.Text = "Doktora Göre Hasta Sayısı";
+                graphPane.XAxis.Title.Text = "Doktor";
+                graphPane.YAxis.Title.Text = "Hasta Sayısı";
+
+                // X eksenini başlat
+                graphPane.XAxis.Scale.TextLabels = data.Keys.ToArray();
+                graphPane.XAxis.Type = AxisType.Text;
+
+                // Veri serisi oluştur
+                PointPairList pointPairList = new PointPairList();
+                foreach (var item in data)
+                {
+                    double x = pointPairList.Count + 1;
+                    double y = item.Value;
+                    string doctorName = item.Key;
+                    pointPairList.Add(x, y);
+
+                    // Yuvarlakların üstüne hasta sayısını ekleyin
+                    TextObj text = new TextObj(y.ToString(), x, y, CoordType.AxisXYScale, AlignH.Center, AlignV.Bottom);
+                    text.FontSpec.Size = 15; // Yazı boyutunu ayarlayabilirsiniz
+                    graphPane.GraphObjList.Add(text);
+                }
+
+                // Çizgi grafiği oluştur
+                LineItem curve = graphPane.AddCurve("Hasta Sayısı", pointPairList, System.Drawing.Color.DarkSeaGreen, SymbolType.Circle);
+                curve.Line.IsSmooth = true;
+                curve.Line.Width = 3;
+
+                // Eksenleri yeniden çiz
+                zedGraphControl2.AxisChange();
+                zedGraphControl2.Invalidate();
+            }
+
+
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //temizle
+            zedGraphControl2.GraphPane.CurveList.Clear();
+            zedGraphControl2.GraphPane.GraphObjList.Clear();
+            zedGraphControl2.AxisChange();
+            zedGraphControl2.Invalidate();
+
+            //yeniden oluştur
+            Dictionary<string, int> doctorPatientCounts = ZedGraph.GetDoctorPatientCounts();
+            doktorhasta(doctorPatientCounts);
         }
     }
 }

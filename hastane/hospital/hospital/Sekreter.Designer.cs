@@ -120,6 +120,9 @@
             this.güncelle = new System.Windows.Forms.Button();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -131,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -140,6 +144,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(-2, 13);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
@@ -1163,6 +1168,44 @@
             this.zedGraphControl1.TabIndex = 0;
             this.zedGraphControl1.UseExtendedPrintDialog = true;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage6.Controls.Add(this.button1);
+            this.tabPage6.Controls.Add(this.zedGraphControl2);
+            this.tabPage6.Location = new System.Drawing.Point(4, 28);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1314, 430);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Doktora göre hasta sayısı";
+            // 
+            // zedGraphControl2
+            // 
+            this.zedGraphControl2.Location = new System.Drawing.Point(30, 25);
+            this.zedGraphControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.zedGraphControl2.Name = "zedGraphControl2";
+            this.zedGraphControl2.ScrollGrace = 0D;
+            this.zedGraphControl2.ScrollMaxX = 0D;
+            this.zedGraphControl2.ScrollMaxY = 0D;
+            this.zedGraphControl2.ScrollMaxY2 = 0D;
+            this.zedGraphControl2.ScrollMinX = 0D;
+            this.zedGraphControl2.ScrollMinY = 0D;
+            this.zedGraphControl2.ScrollMinY2 = 0D;
+            this.zedGraphControl2.Size = new System.Drawing.Size(1254, 348);
+            this.zedGraphControl2.TabIndex = 0;
+            this.zedGraphControl2.UseExtendedPrintDialog = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1161, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 29);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Güncelle";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Sekreter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1189,6 +1232,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1286,6 +1330,9 @@
         private System.Windows.Forms.TabPage tabPage5;
         private ZedGraph.ZedGraphControl zedGraphControl1;
         private System.Windows.Forms.Button güncelle;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.Button button1;
+        private ZedGraph.ZedGraphControl zedGraphControl2;
     }
 }
 

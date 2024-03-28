@@ -29,5 +29,27 @@ namespace BusinessLayer
             }
             return hastalikBolumleriHastaSayilari;
         }
+
+        // Veritabanından doktorlara ait hasta sayılarını alacak metot
+        public Dictionary<string, int> GetDoctorPatientCounts()
+        {
+            Dictionary<string, int> doctorPatientCounts = new Dictionary<string, int>();
+
+            // Veritabanına bağlanma ve sorgu çalıştırma işlemleri
+            using (OleDbConnection connection = baglanti.ConnectionOpen())
+            {
+                string query = "SELECT DoktorKimlik, COUNT(*) AS HastaSayısı FROM Randevu GROUP BY DoktorKimlik";
+                OleDbCommand command = new OleDbCommand(query, connection);
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string doctorName = reader["DoktorKimlik"].ToString();
+                    int patientCount = Convert.ToInt32(reader["HastaSayısı"]);
+                    doctorPatientCounts.Add(doctorName, patientCount);
+                }
+            }
+
+            return doctorPatientCounts;
+        }
     }
 }
