@@ -50,6 +50,7 @@ namespace BusinessLayer
             }
 
             return doctorPatientCounts;
+
         }
     }
 }

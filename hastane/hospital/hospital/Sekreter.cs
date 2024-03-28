@@ -564,6 +564,7 @@ namespace hospital
         }
         private void button1_Click(object sender, EventArgs e)
         {
+
             //temizle
             zedGraphControl2.GraphPane.CurveList.Clear();
             zedGraphControl2.GraphPane.GraphObjList.Clear();
