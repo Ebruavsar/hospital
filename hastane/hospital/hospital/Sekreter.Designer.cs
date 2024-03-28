@@ -119,6 +119,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -1127,6 +1128,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage5.Controls.Add(this.button1);
             this.tabPage5.Controls.Add(this.zedGraphControl1);
             this.tabPage5.Location = new System.Drawing.Point(4, 28);
             this.tabPage5.Name = "tabPage5";
@@ -1137,7 +1139,7 @@
             // 
             // zedGraphControl1
             // 
-            this.zedGraphControl1.Location = new System.Drawing.Point(55, 20);
+            this.zedGraphControl1.Location = new System.Drawing.Point(40, 19);
             this.zedGraphControl1.Margin = new System.Windows.Forms.Padding(4);
             this.zedGraphControl1.Name = "zedGraphControl1";
             this.zedGraphControl1.ScrollGrace = 0D;
@@ -1147,9 +1149,18 @@
             this.zedGraphControl1.ScrollMinX = 0D;
             this.zedGraphControl1.ScrollMinY = 0D;
             this.zedGraphControl1.ScrollMinY2 = 0D;
-            this.zedGraphControl1.Size = new System.Drawing.Size(1229, 383);
+            this.zedGraphControl1.Size = new System.Drawing.Size(1229, 354);
             this.zedGraphControl1.TabIndex = 0;
             this.zedGraphControl1.UseExtendedPrintDialog = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1177, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 29);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Güncelle";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Sekreter
             // 
@@ -1273,6 +1284,7 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.TabPage tabPage5;
         private ZedGraph.ZedGraphControl zedGraphControl1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
