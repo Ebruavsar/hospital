@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -68,50 +69,11 @@ namespace hospital
 
             /*----------------------------------------------------------------------------*/
 
-            
+            //------zedgraph
             Dictionary<string, int> hastalikBolumleriHastaSayilari = ZedGraph.GetHastalikBolumleriHastaSayilari();
             DrawBarGraph(hastalikBolumleriHastaSayilari);
 
         }
-
-        private void DrawBarGraph(Dictionary<string, int> data)
-        {
-            GraphPane graphPane = zedGraphControl1.GraphPane;
-            graphPane.Title.Text = "Hastalık Bölümlerine Göre Hasta Sayısı";
-            graphPane.XAxis.Title.Text = "Hastalık Bölümü";
-            graphPane.YAxis.Title.Text = "Hasta Sayısı";
-
-            // Veri serisi oluştur
-            string[] labels = data.Keys.ToArray();
-            double[] values = data.Values.Select(x => (double)x).ToArray();
-
-
-            // Sütunların konumunu ve genişliğini belirleyin
-            double[] positions = new double[data.Count];
-            for (int i = 0; i < data.Count; i++)
-            {
-                positions[i] = i + 1; // Sütunun x konumu
-            }
-
-            // Sütunları oluşturun
-            BarItem bar = graphPane.AddBar("Hasta Sayısı", positions, values, Color.DarkSeaGreen);
-
-            BarItem.CreateBarLabels(graphPane, false, "F0");
-
-            // Sütunların genişliğini ayarlayın
-            graphPane.BarSettings.ClusterScaleWidth = 1.0;
-
-            // X ekseninde etiketleri ayarlayın
-            graphPane.XAxis.Scale.TextLabels = labels;
-            graphPane.XAxis.Type = AxisType.Text;
-
-            // Eksenleri yeniden çiz
-            zedGraphControl1.AxisChange();
-            zedGraphControl1.Invalidate();
-
-  
-        }
-
 
 
         //doktor ekle,sil,güncelle-----------------------------------------------------------------------------------------------------
@@ -420,6 +382,7 @@ namespace hospital
                 DataGridViewRow selectedRow = dataGridView4.Rows[e.RowIndex];
 
                 textBox18.Text = selectedRow.Cells[0].Value.ToString();
+                comboBox5.Text = selectedRow.Cells[3].Value.ToString();
             }
         }
 
@@ -503,6 +466,56 @@ namespace hospital
             }
         }
 
-     
+        //----------ZedGraph bölüme göre hastalık-----------
+        private void DrawBarGraph(Dictionary<string, int> data)
+        {
+            
+            GraphPane graphPane = zedGraphControl1.GraphPane;
+            graphPane.Title.Text = "Hastalık Bölümlerine Göre Hasta Sayısı";
+            graphPane.XAxis.Title.Text = "Hastalık Bölümü";
+            graphPane.YAxis.Title.Text = "Hasta Sayısı";
+
+            // Veri serisi oluştur
+            string[] labels = data.Keys.ToArray();
+            double[] values = data.Values.Select(x => (double)x).ToArray();
+
+
+            // Sütunların konumunu ve genişliğini belirleyin
+            double[] positions = new double[data.Count];
+            for (int i = 0; i < data.Count; i++)
+            {
+                positions[i] = i + 1; // Sütunun x konumu
+            }
+
+            // Sütunları oluşturun
+            BarItem bar = graphPane.AddBar("Hasta Sayısı", positions, values, Color.DarkSeaGreen);
+
+            BarItem.CreateBarLabels(graphPane, false, "F0");
+
+            // Sütunların genişliğini ayarlayın
+            graphPane.BarSettings.ClusterScaleWidth = 1.0;
+
+            // X ekseninde etiketleri ayarlayın
+            graphPane.XAxis.Scale.TextLabels = labels;
+            graphPane.XAxis.Type = AxisType.Text;
+
+            // Eksenleri yeniden çiz
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
+
+        }
+        private void güncelle_Click(object sender, EventArgs e)
+        {
+            //temizle
+            zedGraphControl1.GraphPane.CurveList.Clear();
+            zedGraphControl1.GraphPane.GraphObjList.Clear();
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+
+            //yeniden oluştur
+            Dictionary<string, int> hastalikBolumleriHastaSayilari2 = ZedGraph.GetHastalikBolumleriHastaSayilari();
+            DrawBarGraph(hastalikBolumleriHastaSayilari2);
+        }
     }
 }
