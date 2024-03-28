@@ -81,6 +81,9 @@
     <Compile Include="SekreterGiris.Designer.cs">
       <DependentUpon>SekreterGiris.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Doktor.resx">
+      <DependentUpon>Doktor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DoktorGiris.resx">
       <DependentUpon>DoktorGiris.cs</DependentUpon>
     </EmbeddedResource>

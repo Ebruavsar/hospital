@@ -31,3 +31,14 @@ C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Debug\Business
 C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinesLayer.dll
 C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinesLayer.pdb
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinesLayer.dll
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinesLayer.pdb
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\bin\Debug\BusinesLayer.dll
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\bin\Debug\BusinesLayer.pdb
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\bin\Debug\EntityLayer.dll
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\bin\Debug\EntityLayer.pdb
+C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\BusinesLayer\obj\Debug\BusinessLayer.csproj.CopyComplete

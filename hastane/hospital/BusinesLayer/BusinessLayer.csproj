@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoktorIslemleri.cs" />
+    <Compile Include="DoktorRandevu.cs" />
     <Compile Include="HastaIslemleri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Giris.cs" />
