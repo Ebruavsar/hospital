@@ -24,7 +24,7 @@ namespace hospital
     {
         public BusinessLayer.DoktorRandevu doktorRandevu = new DoktorRandevu();
         public string Giristen_Alinan_Doktor_Kimlik = "";
-        public BusinessLayer.ZedGraph ZedGraph = new BusinessLayer.ZedGraph();
+        
         public Doktor()
         {
             InitializeComponent();
