@@ -35,12 +35,19 @@ namespace BusinessLayer
 
                 if (reader.Read())
                 {
-                    ad = reader["HastaAd"].ToString();
-                    soyad = reader["HastaSoyad"].ToString();
-                    // Parse the birth date from the reader
-                    if (DateTime.TryParse(reader["HastaDogumTarihi"].ToString(), out DateTime tempDate))
-                        dogumTarihi = tempDate;
-                    cinsiyet = reader["HastaCinsiyet"].ToString();
+                    Hasta hasta = new Hasta()
+                    {
+                        HastaAd = reader["HastaAd"].ToString(),
+                        HastaSoyad = reader["HastaSoyad"].ToString(),
+                        HastaDogumTarihi =(DateTime)reader["HastaDogumTarihi"],
+                        HastaCinsiyet = reader["HastaCinsiyet"].ToString(),
+                    };
+                    ad = hasta.HastaAd;
+                    soyad = hasta.HastaSoyad;
+                    dogumTarihi = hasta.HastaDogumTarihi;
+                    cinsiyet =hasta.HastaCinsiyet;
+                    
+                   
                 }
 
                 reader.Close();

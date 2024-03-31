@@ -14,6 +14,8 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using ZedGraph;
+using System.Runtime.InteropServices.ComTypes;
 
 
 namespace hospital
@@ -22,6 +24,7 @@ namespace hospital
     {
         public BusinessLayer.DoktorRandevu doktorRandevu = new DoktorRandevu();
         public string Giristen_Alinan_Doktor_Kimlik = "";
+        public BusinessLayer.ZedGraph ZedGraph = new BusinessLayer.ZedGraph();
         public Doktor()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace hospital
             dateTimePicker1.Value = DateTime.Now;
             DataTable tablo = doktorRandevu.eski_gorusmeler(comboBox1.Text, textBox1.Text);
             dataGridView2.DataSource = tablo;
+
         }
 
         private void goruntule_Click(object sender, EventArgs e)
@@ -135,6 +139,8 @@ namespace hospital
             DataTable tablo = doktorRandevu.eski_gorusmeler(comboBox1.Text, textBox1.Text);
             dataGridView2.DataSource = tablo;
         }
+
+        
 
 
     }

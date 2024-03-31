@@ -114,3 +114,7 @@ C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\o
 C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\bin\Debug\itextsharp.dll
 C:\Users\beyza\OneDrive\Masaüstü\hospital\hospital\hastane\hospital\hospital\bin\Debug\itextsharp.xml
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\hospital\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\hospital\bin\Debug\itextsharp.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\hospital\bin\Debug\itextsharp.xml
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\hospital\obj\Debug\hospital.Doktor.resources

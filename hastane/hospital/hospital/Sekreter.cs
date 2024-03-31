@@ -494,7 +494,9 @@ namespace hospital
             BarItem.CreateBarLabels(graphPane, false, "F0");
 
             // Sütunların genişliğini ayarlayın
-            graphPane.BarSettings.ClusterScaleWidth = 1.0;
+            graphPane.BarSettings.ClusterScaleWidth = 0.5;
+            graphPane.XAxis.Scale.FontSpec.Size = 10;
+
 
             // X ekseninde etiketleri ayarlayın
             graphPane.XAxis.Scale.TextLabels = labels;

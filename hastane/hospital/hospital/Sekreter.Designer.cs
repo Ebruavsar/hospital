@@ -119,10 +119,10 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.zedGraphControl1 = new ZedGraph.ZedGraphControl();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
             this.button2 = new System.Windows.Forms.Button();
+            this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -1181,10 +1181,20 @@
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Doktora göre hasta sayısı";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1199, 383);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(92, 29);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Güncelle";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // zedGraphControl2
             // 
             this.zedGraphControl2.Location = new System.Drawing.Point(21, 19);
-            this.zedGraphControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.zedGraphControl2.Margin = new System.Windows.Forms.Padding(4);
             this.zedGraphControl2.Name = "zedGraphControl2";
             this.zedGraphControl2.ScrollGrace = 0D;
             this.zedGraphControl2.ScrollMaxX = 0D;
@@ -1197,16 +1207,6 @@
             this.zedGraphControl2.TabIndex = 0;
             this.zedGraphControl2.UseExtendedPrintDialog = true;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1199, 383);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 29);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Güncelle";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Sekreter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1216,7 +1216,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sekreter";
-            this.Text = "Form1";
+            this.Text = "Sekreter";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
