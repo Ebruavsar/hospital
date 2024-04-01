@@ -45,6 +45,7 @@
     <Compile Include="Doktor.cs" />
     <Compile Include="Gorusme.cs" />
     <Compile Include="Hasta.cs" />
+    <Compile Include="Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Randevu.cs" />
     <Compile Include="Sekreter.cs" />

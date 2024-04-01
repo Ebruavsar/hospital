@@ -23,6 +23,7 @@ namespace hospital
     public partial class Doktor : Form
     {
         public BusinessLayer.DoktorRandevu doktorRandevu = new DoktorRandevu();
+        public BusinessLayer.Mail mail = new Mail();
         public string Giristen_Alinan_Doktor_Kimlik = "";
         
         public Doktor()
@@ -140,8 +141,21 @@ namespace hospital
             dataGridView2.DataSource = tablo;
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<string> liste = new List<string>();
+            try
+            {
+                string gorus = ("Görüş: \n" + richTextBox1.Text + "\n\nTahlil: \n" + richTextBox2.Text);
+                
+                mail.SendMail(liste, label7.Text, "Düzce Hastanesi", gorus);
+                MessageBox.Show("Mail Gönderildi");
+            }
+            catch
+            {
+                MessageBox.Show("Hata");
 
-
+            }
+        }
     }
 }
