@@ -71,13 +71,13 @@ namespace BusinessLayer
             try
             {
                 if (filter == "Hasta Kimlik")
-                    query = "SELECT HastaKimlik, Gorusler, Tahlil FROM Gorusme WHERE HastaKimlik LIKE '" + text + "%'";
+                    query = "SELECT Gorusme.HastaKimlik, Gorusme.Gorusler, Gorusme.Tahlil, Randevu.RandevuTarihi FROM Gorusme INNER JOIN Randevu ON Gorusme.HastaKimlik = Randevu.HastaKimlik WHERE Gorusme.HastaKimlik LIKE '" + text + "%'";
                 else if (filter == "Randevu Tarih")
                 {
                     query = "SELECT Gorusme.HastaKimlik, Gorusme.Gorusler, Gorusme.Tahlil, Randevu.RandevuTarihi FROM Gorusme INNER JOIN Randevu ON Gorusme.HastaKimlik = Randevu.HastaKimlik WHERE Randevu.RandevuTarihi LIKE '" + text + "%'";
                 }
                 else
-                    query = "SELECT HastaKimlik, Gorusler, Tahlil FROM Gorusme";
+                    query = "SELECT Gorusme.HastaKimlik, Gorusme.Gorusler, Gorusme.Tahlil, Randevu.RandevuTarihi FROM Gorusme INNER JOIN Randevu ON Gorusme.HastaKimlik = Randevu.HastaKimlik";
 
                 OleDbCommand komut = new OleDbCommand(query, connection);
                 OleDbDataAdapter da = new OleDbDataAdapter(komut);

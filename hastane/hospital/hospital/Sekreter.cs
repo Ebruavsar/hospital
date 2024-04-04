@@ -368,6 +368,9 @@ namespace hospital
             r_listele_Click(sender, e);
         }
 
+        
+
+
         private void goruntule_Click(object sender, EventArgs e)
         {
             label28.Text = RandevuIslemleri.HastaGoruntuleAd(textBox21.Text);
@@ -405,11 +408,31 @@ namespace hospital
                 checkedListBox1.Items.Add(editedText + i + "0");
             }
         }
+        private void checkedListBox1_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.CurrentValue == CheckState.Checked)
+            {
+                checkedListBox1.ItemCheck -= checkedListBox1_ItemCheck;
+                checkedListBox1.SetItemChecked(e.Index, false);
+                checkedListBox1.ItemCheck += checkedListBox1_ItemCheck;
+            }
+            // Eğer yeni bir öğe seçiliyorsa, diğer öğelerin işaretlerini kaldır
+            else
+            {
+                for (int i = 0; i < checkedListBox1.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        checkedListBox1.SetItemChecked(i, false);
+                    }
+                }
+            }
+        }
 
         //hata mesajları için------------------------------------------------------------------------------------------------------------
         private bool IsTCKimlikValid(string tcKimlik)
         {
-            // TC kimlik numarası 11 haneli olmalıdır ve sadece rakamları içermelidir
+            // TC kimlik numarası 11 haneli olmalı ve sadece rakam
             if (tcKimlik.Length != 11 || !tcKimlik.All(char.IsDigit))
             {
                 return false;
@@ -420,17 +443,18 @@ namespace hospital
 
         private string FormatPhoneNumber(string phoneNumber)
         {
-            // Telefon numarasından sadece rakamları al
+            if (string.IsNullOrEmpty(phoneNumber))
+            {
+                return string.Empty;
+            }
+
             string digitsOnly = new string(phoneNumber.Where(char.IsDigit).ToArray());
 
-            // Eğer telefon numarası 10 haneli değilse veya rakamları içermiyorsa, hata vermeden devam et
             if (digitsOnly.Length != 10)
             {
-                // 10 haneden azsa, ekleme yapamayız, hatayı işlemi devam ettirmeden fırlat
                 throw new ArgumentException("Telefon numarası 10 haneli olmalıdır.");
             }
 
-            // Telefon numarasını istediğiniz formata dönüştür: (XXX) XXX-XXXX
             string formattedPhoneNumber = string.Format("({0}) {1}-{2}",
                 digitsOnly.Substring(0, 3),
                 digitsOnly.Substring(3, 3),
@@ -439,31 +463,30 @@ namespace hospital
             return formattedPhoneNumber;
         }
 
-
-
         private bool IsEmailValid(string email)
         {
+            if (string.IsNullOrEmpty(email))
+            {
+                return true;
+            }
+
             try
             {
-                // E-posta adresi için bir regular expression (düzenli ifade) kullanarak doğrulama yapın
                 string pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
-                // Örnek bir regular expression, basit bir doğrulamadır. Daha karmaşık bir doğrulama gerekebilir.
-                // Bu örnekte, e-posta adresinin alfanumerik, @ işareti, nokta (.) ve tire (-) karakterlerini içermesi beklenir.
-                // Daha karmaşık doğrulama senaryoları için regular expression'ları daha genişletmek gerekebilir.
+                
 
-                // Regular expression kullanarak e-posta adresini kontrol edin
                 if (Regex.IsMatch(email, pattern))
                 {
-                    return true; // Eğer e-posta adresi geçerliyse true döndürün
+                    return true; 
                 }
                 else
                 {
-                    return false; // Geçerli değilse false döndürün
+                    return false; 
                 }
             }
             catch (Exception)
             {
-                return false; // Herhangi bir hata durumunda false döndürün
+                return false; 
             }
         }
 
@@ -576,5 +599,7 @@ namespace hospital
             Dictionary<string, int> hastalikBolumleriHastaSayilari2 = ZedGraph.GetHastalikBolumleriHastaSayilari();
             DrawBarGraph(hastalikBolumleriHastaSayilari2);
         }
+
+        
     }
 }

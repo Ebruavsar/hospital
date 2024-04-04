@@ -36,6 +36,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.pdf = new System.Windows.Forms.Button();
             this.ekle = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -60,7 +61,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -179,6 +179,16 @@
             this.tabPage1.Size = new System.Drawing.Size(1118, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Randevu";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(645, 414);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 27);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "E-Posta";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pdf
             // 
@@ -408,16 +418,6 @@
             this.tabControl1.Size = new System.Drawing.Size(1126, 487);
             this.tabControl1.TabIndex = 0;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(645, 414);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 27);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "E-Posta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Doktor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,6 +425,7 @@
             this.ClientSize = new System.Drawing.Size(1150, 503);
             this.Controls.Add(this.tabControl1);
             this.Name = "Doktor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doktor";
             this.Load += new System.EventHandler(this.Doktor_Load);
             this.tabPage2.ResumeLayout(false);

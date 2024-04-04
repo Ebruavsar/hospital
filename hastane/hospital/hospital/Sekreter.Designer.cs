@@ -954,6 +954,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(142, 130);
             this.checkedListBox1.TabIndex = 50;
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBox1_ItemCheck);
             // 
             // comboBox7
             // 
@@ -1140,7 +1141,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1314, 430);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Bölüme göre hasta sayısı";
+            this.tabPage5.Text = "Bölüme Göre Hasta Sayısı";
             // 
             // button1
             // 
@@ -1179,7 +1180,7 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1314, 430);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Doktora göre hasta sayısı";
+            this.tabPage6.Text = "Doktora Göre Hasta Sayısı";
             // 
             // button2
             // 
@@ -1216,6 +1217,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sekreter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sekreter";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
