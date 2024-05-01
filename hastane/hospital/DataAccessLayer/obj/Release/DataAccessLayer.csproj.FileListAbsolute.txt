@@ -1,0 +1,6 @@
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\bin\Release\DataAccessLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\bin\Release\DataAccessLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Release\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Release\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Release\DataAccessLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\DataAccessLayer\obj\Release\DataAccessLayer.pdb

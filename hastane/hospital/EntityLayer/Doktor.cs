@@ -8,7 +8,7 @@ namespace EntityLayer
 {
     public class Doktor
     {
-        //prop
+        
         public string DoktorKimlik { get; set; }
         public string DoktorAd { get; set; }
 

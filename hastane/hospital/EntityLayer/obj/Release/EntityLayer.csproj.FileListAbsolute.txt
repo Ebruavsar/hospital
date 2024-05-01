@@ -1,0 +1,6 @@
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\bin\Release\EntityLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\bin\Release\EntityLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Release\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Release\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Release\EntityLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\EntityLayer\obj\Release\EntityLayer.pdb

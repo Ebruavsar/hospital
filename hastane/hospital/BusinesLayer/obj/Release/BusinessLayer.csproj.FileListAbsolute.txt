@@ -1,0 +1,11 @@
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\bin\Release\BusinesLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\bin\Release\BusinesLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\bin\Release\DataAccessLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\bin\Release\EntityLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\bin\Release\DataAccessLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\bin\Release\EntityLayer.pdb
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Release\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Release\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Release\BusinessLayer.csproj.CopyComplete
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Release\BusinesLayer.dll
+C:\Users\ebrua\Desktop\hospital\hastane\hospital\BusinesLayer\obj\Release\BusinesLayer.pdb
