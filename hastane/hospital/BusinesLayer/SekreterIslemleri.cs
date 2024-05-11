@@ -20,7 +20,8 @@ namespace BusinessLayer
             OleDbConnection connection = baglanti.ConnectionOpen();
             try
             {
-                OleDbCommand komut = new OleDbCommand("INSERT INTO Sekreter (SekreterKimlik, SekreterAd,SekreterSoyad,SekreterTelefon,SekreterSifre) VALUES (@SekreterKimlik, @SekreterrAd, @SekreterSoyad,@SekreterTelefon,@SekreterSifre)", connection);
+                OleDbCommand komut = new OleDbCommand("INSERT INTO Sekreter (SekreterKimlik, SekreterAd,SekreterSoyad,SekreterTelefon,SekreterSifre) " +
+                    "VALUES (@SekreterKimlik, @SekreterrAd, @SekreterSoyad,@SekreterTelefon,@SekreterSifre)", connection);
                 komut.Parameters.AddWithValue("@SekreterKimlik", kimlik);
                 komut.Parameters.AddWithValue("@SekreterAd", ad);
                 komut.Parameters.AddWithValue("@SekreterSoyad", soyad);
@@ -86,7 +87,8 @@ namespace BusinessLayer
             OleDbConnection connection = baglanti.ConnectionOpen();
             try
             {
-                OleDbCommand komut = new OleDbCommand("UPDATE Sekreter SET SekreterAd=@SekreterAd, SekreterSoyad=@SekreterSoyad, SekreterTelefon=@SekreterTelefon, SekreterSifre=@SekreterSifre  WHERE SekreterKimlik = @SekreterKimlik", connection);
+                OleDbCommand komut = new OleDbCommand("UPDATE Sekreter SET SekreterAd=@SekreterAd, SekreterSoyad=@SekreterSoyad, SekreterTelefon=@SekreterTelefon, SekreterSifre=@SekreterSifre " +
+                    " WHERE SekreterKimlik = @SekreterKimlik", connection);
 
                 komut.Parameters.AddWithValue("@SekreterAd", ad);
                 komut.Parameters.AddWithValue("@SekreterSoyad", soyad);
