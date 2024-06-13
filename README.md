@@ -1,6 +1,6 @@
 # HASTA RANDEVU VE KAYIT SİSTEMİ
 
-## 2023-2024 AKADEMİK YILI BAHAR DÖNEMİ
+
 ## BM442-Görsel Programlama
 
 ---
